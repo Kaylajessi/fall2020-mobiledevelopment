@@ -16,6 +16,8 @@ function App() {
   );
 }
 
+export default App;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -38,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default App;
+
