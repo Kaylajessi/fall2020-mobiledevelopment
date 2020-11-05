@@ -8,7 +8,7 @@ export default function App() {
     <View>
       <Card>
         <Card.Title>Kayla</Card.Title>
-        <Text>Sushii</Text>
+        <Text>Sushi</Text>
         <Card.Divider/>
         <Text>Pizza</Text>
         <Button title="Submit"></Button>
