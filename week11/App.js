@@ -11,7 +11,7 @@ export default function App() {
         <Text>Sushi</Text>
         <Card.Divider/>
         <Text>Pizza</Text>
-        <Button title="Submit"></Button>
+        <Button title="SUBMIT"></Button>
       </Card>
     </View>
 
