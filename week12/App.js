@@ -7,8 +7,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Card>
-        <Card.Title>Vote!</Card.Title>
-        <Text style={props.styles.header}>Please vote for your preferred choice of food!</Text>
+        <Card.Title style={styles.header}>Vote!</Card.Title>
+        <Text>Please vote for your preferred choice of food!</Text>
         <Card.Divider/>
         <Button title="Pizza" onPress={ () => {setPressed(!pressed)} } />
         <Card.Divider/>
@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
   },
   header: {
     margin: 24,
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#ED0404',
+    color: '#06c258',
   },
 });
