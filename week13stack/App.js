@@ -5,41 +5,72 @@ import { Button } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+function HomeScreen(props) {
+  return (
+    <View style={styles.container}>
+      <Text>Activities!</Text>
+      <Button 
+        title="Kickball"
+        onPress={() => props.navigation.navigate("Kickball")}/>
+      <Button 
+        title="Golfing"
+        onPress={() => props.navigation.navigate("Golfing")}/>
+    </View>
+  );
+}
 
-function FilesScreen(props) {
+
+function KickballScreen() {
+  const [track, setTrack] = useState(0)
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+      <Text>Kickball count: {track}</Text>
       <Button
-        title="Settings"
-        onPress={() => props.navigation.navigate('Settings')}
+        title="Increase"
+        onPress={() => setTrack(track + 1)}
+      />
+      <Button
+        title="Reset"
+        onPress={() => setTrack(0)}
       />
     </View>
   );
 }
 
-function SettingsScreen(props) {
+function GolfingScreen() {
+  const [track, setTrack] = useState(0)
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
+      <Text>Golfing count: {track}</Text>
       <Button
-        title="Back to Home"
-        onPress={() => props.navigation.navigate('Home')}
+        title="Increase"
+        onPress={() => setTrack(track + 1) }
+      />
+      <Button
+        title="Reset"
+        onPress={() => setTrack(0)}
       />
     </View>
   );
 }
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
-function Home() {
+function Home(screen1, screen2) {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Files" component={FilesScreen} />
-        <Stack.Screen name="Settings" component={SettingsScreen} />
-      </Stack.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Kickball" component={screen1} />
+        <Drawer.Screen name="Golfing" component={screen2} />
+      </Drawer.Navigator>
     </NavigationContainer>
+  );
+}
+
+function App(){
+  return Home(
+    KickballScreen, GolfingScreen
   );
 }
 
