@@ -54,16 +54,16 @@ function GolfingScreen() {
   );
 }
 
-const Drawer = createDrawerNavigator();
+const Drawer = createStackNavigator();
 
 function Home(screen1, screen2) {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Kickball" component={screen1} />
-        <Drawer.Screen name="Golfing" component={screen2} />
-      </Drawer.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Kickball" component={screen1} />
+        <Stack.Screen name="Golfing" component={screen2} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
