@@ -21,7 +21,7 @@ export default function App() {
               <Card.Divider/>
               <Choice storage={meal} title="meal" onPress={ (item) => {setPressed(item)}} />
               <Card.Divider/>
-              <Choice storage={desert} title="desert" onPress={ (item) => {setPressed(item)}} />
+              <Choice storage={desert} title="dessert" onPress={ (item) => {setPressed(item)}} />
           </Card>
          }
           <Card>
