@@ -1,16 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Card, Button } from 'react-native-elements';
+import Choice from './Choice.js'
 
+const appetizer = ["cheese sticks", "potato skins", "zingers"]
+const meal = ["pasta", "pizza", "burgers"]
 export default function App() {
   return (
     <View>
       <Card>
-        <Card.Title>Kayla</Card.Title>
-        <Text>Sushi</Text>
+        <Card.Title>Menu</Card.Title>
+        <Text>Appetizers</Text>
+        <Choice storage={appetizer}></Choice>
         <Card.Divider/>
-        <Text>Pizza</Text>
+        <Text>Meal</Text>
+        <Choice storage={meal}></Choice>
         <Button title="SUBMIT"></Button>
       </Card>
     </View>
