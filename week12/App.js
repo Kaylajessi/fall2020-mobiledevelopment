@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Card, Button } from 'react-native-elements';
+import Choice from './Choice.js'
+
+const appetizer = ["chips and dip", "shrimp scampi", "quesadilla"]
+const meal = ["tacos", "wings", "steak"]
+const desert = ["cake", "cookies", "ice cream"]
 
 export default function App() {
   const [pressed, setPressed] = useState()
@@ -12,11 +17,11 @@ export default function App() {
               <Card.Title style={styles.header}>Vote!</Card.Title>
               <Text>Please vote for your preferred choice of food</Text>
               <Card.Divider/>
-              <Button title="Pizza" onPress={ () => {setPressed("Pizza")}} />
+              <Choice storage={appetizer} title="appetizer" onPress={ (item) => {setPressed(item)}} />
               <Card.Divider/>
-              <Button title="Burger" onPress={ () => {setPressed("Burger")}} />
+              <Choice storage={meal} title="meal" onPress={ (item) => {setPressed(item)}} />
               <Card.Divider/>
-              <Button title="Wings" onPress={ () => {setPressed("Wings")}} />
+              <Choice storage={desert} title="desert" onPress={ (item) => {setPressed(item)}} />
           </Card>
          }
           <Card>
